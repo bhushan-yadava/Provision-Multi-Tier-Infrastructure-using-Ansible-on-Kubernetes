@@ -1,0 +1,26 @@
+- name: Build Apache image
+  community.docker.docker_image:
+    name: "{{ apache_image }}"
+    build:
+      path: "{{ playbook_dir }}/roles/images/templates"
+      dockerfile: Dockerfile.apache
+    push: false
+    source: build
+
+- name: Build PHP image
+  community.docker.docker_image:
+    name: "{{ php_image }}"
+    build:
+      path: "{{ playbook_dir }}/roles/images/templates"
+      dockerfile: Dockerfile.php
+    push: false
+    source: build
+
+- name: Build MySQL image
+  community.docker.docker_image:
+    name: "{{ mysql_image }}"
+    build:
+      path: "{{ playbook_dir }}/roles/images/templates"
+      dockerfile: Dockerfile.mysql
+    push: false
+    source: build

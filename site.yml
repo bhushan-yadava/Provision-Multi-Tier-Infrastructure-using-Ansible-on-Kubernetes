@@ -1,0 +1,9 @@
+- name: Provision Multi-Tier LAMP Stack on Kubernetes
+  hosts: local
+  become: true
+  vars_files:
+    - group_vars/all.yml
+  roles:
+    - images
+    - k8s-deploy
+    - init-db

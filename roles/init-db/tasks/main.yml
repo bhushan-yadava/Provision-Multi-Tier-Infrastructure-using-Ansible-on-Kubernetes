@@ -1,0 +1,4 @@
+- name: Run DB initialization job
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'db-init-job.yaml.j2') }}"

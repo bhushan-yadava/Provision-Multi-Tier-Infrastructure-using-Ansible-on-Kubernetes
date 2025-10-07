@@ -1,0 +1,20 @@
+- name: Ensure Kubernetes namespace exists
+  kubernetes.core.k8s:
+    state: present
+    kind: Namespace
+    name: "{{ namespace }}"
+
+- name: Deploy Persistent Volume Claims
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'lamp-pvc.yaml.j2') }}"
+
+- name: Deploy Application Deployment
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'lamp-deployment.yaml.j2') }}"
+
+- name: Deploy Service
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'lamp-service.yaml.j2') }}"

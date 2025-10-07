@@ -1,0 +1,23 @@
+project_name: lamp-stack
+namespace: lamp
+registry: myregistry.local:5000
+k8s_context: minikube
+
+# Persistent Volume
+storage_class: standard
+mysql_pvc_size: 2Gi
+app_pvc_size: 1Gi
+
+# MySQL Configuration
+mysql_root_password: rootpass
+mysql_database: lampdb
+mysql_user: lampuser
+mysql_password: lamppass
+
+# Image Names
+apache_image: "{{ registry }}/apache-base:latest"
+mysql_image: "{{ registry }}/mysql-base:latest"
+php_image: "{{ registry }}/php-base:latest"
+
+# Paths
+build_dir: "./build"
