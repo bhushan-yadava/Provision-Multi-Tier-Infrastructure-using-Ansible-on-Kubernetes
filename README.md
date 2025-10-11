@@ -41,6 +41,7 @@ Ansible applies Kubernetes manifests (Deployments, PVCs, Services)
 Ansible initializes the database using a Kubernetes Job
 
 
+
 🧱 Project Structure
 
 provision-lamp-ansible-k8s/
