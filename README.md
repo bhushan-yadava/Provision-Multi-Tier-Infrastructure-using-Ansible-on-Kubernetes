@@ -32,7 +32,6 @@ This setup reflects production-ready multi-tier infrastructure management — a 
 +-----------------------------+
 
 
-
 Automation Flow:
 
 Ansible builds custom Docker images (Apache, PHP, MySQL)
@@ -40,7 +39,6 @@ Ansible builds custom Docker images (Apache, PHP, MySQL)
 Ansible applies Kubernetes manifests (Deployments, PVCs, Services)
 
 Ansible initializes the database using a Kubernetes Job
-
 
 
 
